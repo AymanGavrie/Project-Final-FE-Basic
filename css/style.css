@@ -1,0 +1,41 @@
+/*
+  css/style.css
+  -------------
+  Rules Tailwind does not cover well. Colours and fonts are defined in each
+  page's tailwind.config so they match the Figma design tokens.
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glass navbar pill (Figma: "Glass pill"). */
+.nav-pill {
+  background: rgba(17, 17, 17, 0.72);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 30px;
+}
+
+/* Underline for the active filter on the trophies page. */
+.filter-btn.is-active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid #8c6a3f;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

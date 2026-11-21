@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trophies · Manchester United</title>
+    <meta name="description" content="Seventy trophies across eleven competitions, from domestic honours to European nights and the world stage." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@700;800&display=swap"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#f4efe8",
+              ink: "#1a1714",
+              "ink-soft": "#4a443e",
+              muted: "#8a8178",
+              "muted-2": "#6e665e",
+              bronze: "#8c6a3f",
+              rule: "#d9d1c6",
+            },
+            fontFamily: {
+              display: ['"Barlow Condensed"', "sans-serif"],
+              body: ["Barlow", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="bg-[#fffaf0] font-body text-ink antialiased">
+    <!-- ============ NAVBAR (Figma: Navbar F) ============ -->
+    <header class="fixed inset-x-0 top-[22px] z-50 px-4">
+      <div class="nav-pill mx-auto flex h-[60px] max-w-[1040px] items-center justify-between px-3 lg:px-[21px]">
+        <a href="index.html" class="flex min-w-0 shrink-0 items-center gap-3 lg:w-[230px] lg:gap-4" aria-label="Manchester United home">
+          <img src="assets/images/figma/crest.png" alt="" class="h-[44px] w-[43px] shrink-0 object-cover" />
+          <span class="whitespace-nowrap font-display text-[13px] font-bold tracking-[0.3px] text-white sm:text-[15px]">MANCHESTER UNITED</span>
+        </a>
+
+        <nav class="hidden h-[60px] w-[480px] shrink-0 items-center lg:flex" aria-label="Main">
+          <a href="index.html" class="flex h-10 w-[120px] items-center justify-center rounded-[20px] text-[12px] font-semibold tracking-[0.72px] text-[#bbb] transition-colors hover:text-white">HOME</a>
+          <a href="history.html" class="flex h-10 w-[120px] items-center justify-center rounded-[20px] text-[12px] font-semibold tracking-[0.72px] text-[#bbb] transition-colors hover:text-white">HISTORY</a>
+          <a href="business.html" class="flex h-10 w-[120px] items-center justify-center rounded-[20px] text-[12px] font-semibold tracking-[0.72px] text-[#bbb] transition-colors hover:text-white">BUSINESS</a>
+          <a href="trophies.html" aria-current="page" class="flex h-10 w-[120px] items-center justify-center rounded-[20px] bg-cream text-[12px] font-semibold tracking-[0.72px] text-ink">TROPHIES</a>
+        </nav>
+
+        <div class="flex shrink-0 items-center justify-end gap-2 lg:w-[230px]">
+          <button type="button" class="flex h-10 w-10 items-center justify-center" aria-label="Theme">
+            <img src="assets/images/figma/theme-toggle.svg" alt="" class="h-10 w-10" />
+          </button>
+          <button
+            id="menu-toggle"
+            type="button"
+            class="flex h-10 w-10 items-center justify-center text-white lg:hidden"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Open menu"
+          >
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <nav id="mobile-menu" class="nav-pill mx-auto mt-2 hidden max-w-[1040px] flex-col p-2 lg:hidden" aria-label="Mobile">
+        <a href="index.html" class="px-4 py-3 text-[14px] font-semibold tracking-[0.72px] text-[#bbb]">HOME</a>
+        <a href="history.html" class="px-4 py-3 text-[14px] font-semibold tracking-[0.72px] text-[#bbb]">HISTORY</a>
+        <a href="business.html" class="px-4 py-3 text-[14px] font-semibold tracking-[0.72px] text-[#bbb]">BUSINESS</a>
+        <a href="trophies.html" aria-current="page" class="rounded-[14px] bg-cream px-4 py-3 text-[14px] font-semibold tracking-[0.72px] text-ink">TROPHIES</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="mx-auto w-full max-w-[1152px] px-5 pb-[130px] pt-[170px] lg:px-0">
+        <!-- ============ HEADING ============ -->
+        <h1 class="font-display text-[clamp(40px,7.5vw,96px)] font-bold leading-[1.04] text-[#1e1b18]">Trophies</h1>
+        <p class="mt-[30px] max-w-[640px] text-[22px] leading-[1.5] text-[#5b554e]">
+          Seventy trophies across eleven competitions, from domestic honours to European nights and the world stage.
+        </p>
+
+        <!-- ============ FILTER (Figma: All · League · Domestic cups · Europe) ============ -->
+        <div class="mt-16 flex flex-wrap items-center gap-x-3 text-[18px] font-semibold leading-[1.3] text-[#da291c]" role="group" aria-label="Filter trophies">
+          <button type="button" data-filter="all" aria-pressed="true" class="filter-btn is-active">All</button>
+          <span aria-hidden="true">·</span>
+          <button type="button" data-filter="league" aria-pressed="false" class="filter-btn">League</button>
+          <span aria-hidden="true">·</span>
+          <button type="button" data-filter="domestic-cups" aria-pressed="false" class="filter-btn">Domestic cups</button>
+          <span aria-hidden="true">·</span>
+          <button type="button" data-filter="european" aria-pressed="false" class="filter-btn">Europe</button>
+        </div>
+
+        <!-- ============ HONOURS LIST (two columns, column-major as in Figma) ============ -->
+        <div class="mt-[57px] lg:grid lg:grid-cols-2 lg:gap-x-16">
+          <ul>
+            <li data-category="league">
+              <div class="flex h-[118px] items-start border-t border-[#e4dccd] pt-[22px]">
+                <span class="w-[140px] font-display text-[56px] font-extrabold leading-none text-[#1e1b18]">20</span>
+                <div class="pt-1">
+                  <p class="text-[24px] font-semibold leading-[1.2] text-[#1e1b18]">English League</p>
+                  <p class="mt-[5px] text-[16px] leading-[1.3] text-[#948c82]">1908 — 2013</p>
+                </div>
+              </div>
+            </li>
+            <li data-category="league">
+              <div class="flex h-[118px] items-start border-t border-[#e4dccd] pt-[22px]">
+                <span class="w-[140px] font-display text-[56px] font-extrabold leading-none text-[#1e1b18]">2</span>
+                <div class="pt-1">
+                  <p class="text-[24px] font-semibold leading-[1.2] text-[#1e1b18]">Second Division</p>
+                  <p class="mt-[5px] text-[16px] leading-[1.3] text-[#948c82]">1936, 1975</p>
+                </div>
+              </div>
+            </li>
+            <li data-category="domestic-cups">
+              <div class="flex h-[118px] items-start border-t border-[#e4dccd] pt-[22px]">
+                <span class="w-[140px] font-display text-[56px] font-extrabold leading-none text-[#1e1b18]">13</span>
+                <div class="pt-1">
+                  <p class="text-[24px] font-semibold leading-[1.2] text-[#1e1b18]">FA Cup</p>
+                  <p class="mt-[5px] text-[16px] leading-[1.3] text-[#948c82]">1909 — 2024</p>
+                </div>
+              </div>
+            </li>
+            <li data-category="domestic-cups">
+              <div class="flex h-[118px] items-start border-t border-[#e4dccd] pt-[22px]">
+                <span class="w-[140px] font-display text-[56px] font-extrabold leading-none text-[#1e1b18]">6</span>
+                <div class="pt-1">
+                  <p class="text-[24px] font-semibold leading-[1.2] text-[#1e1b18]">League Cup</p>
+                  <p class="mt-[5px] text-[16px] leading-[1.3] text-[#948c82]">1992 — 2023</p>
+                </div>
+              </div>
+            </li>
+            <li data-category="domestic-cups">
+              <div class="flex h-[118px] items-start border-t border-[#e4dccd] pt-[22px]">
+                <span class="w-[140px] font-display text-[56px] font-extrabold leading-none text-[#1e1b18]">21</span>
+                <div class="pt-1">
+                  <p class="text-[24px] font-semibold leading-[1.2] text-[#1e1b18]">Community Shield</p>
+                  <p class="mt-[5px] text-[16px] leading-[1.3] text-[#948c82]">1908 — 2016</p>
+                </div>
+              </div>
+            </li>
+            <li data-category="european">
+              <div class="flex h-[118px] items-start border-t border-[#e4dccd] pt-[22px]">
+                <span class="w-[140px] font-display text-[56px] font-extrabold leading-none text-[#1e1b18]">3</span>
+                <div class="pt-1">
+                  <p class="text-[24px] font-semibold leading-[1.2] text-[#1e1b18]">Champions League</p>
+                  <p class="mt-[5px] text-[16px] leading-[1.3] text-[#948c82]">1968, 1999, 2008</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <ul>
+            <li data-category="european">
+              <div class="flex h-[118px] items-start border-t border-[#e4dccd] pt-[22px]">
+                <span class="w-[140px] font-display text-[56px] font-extrabold leading-none text-[#1e1b18]">1</span>
+                <div class="pt-1">
+                  <p class="text-[24px] font-semibold leading-[1.2] text-[#1e1b18]">Europa League</p>
+                  <p class="mt-[5px] text-[16px] leading-[1.3] text-[#948c82]">2017</p>
+                </div>
+              </div>
+            </li>
+            <li data-category="european">
+              <div class="flex h-[118px] items-start border-t border-[#e4dccd] pt-[22px]">
+                <span class="w-[140px] font-display text-[56px] font-extrabold leading-none text-[#1e1b18]">1</span>
+                <div class="pt-1">
+                  <p class="text-[24px] font-semibold leading-[1.2] text-[#1e1b18]">Cup Winners' Cup</p>
+                  <p class="mt-[5px] text-[16px] leading-[1.3] text-[#948c82]">1991</p>
+                </div>
+              </div>
+            </li>
+            <li data-category="european">
+              <div class="flex h-[118px] items-start border-t border-[#e4dccd] pt-[22px]">
+                <span class="w-[140px] font-display text-[56px] font-extrabold leading-none text-[#1e1b18]">1</span>
+                <div class="pt-1">
+                  <p class="text-[24px] font-semibold leading-[1.2] text-[#1e1b18]">European Super Cup</p>
+                  <p class="mt-[5px] text-[16px] leading-[1.3] text-[#948c82]">1991</p>
+                </div>
+              </div>
+            </li>
+            <li data-category="european">
+              <div class="flex h-[118px] items-start border-t border-[#e4dccd] pt-[22px]">
+                <span class="w-[140px] font-display text-[56px] font-extrabold leading-none text-[#1e1b18]">1</span>
+                <div class="pt-1">
+                  <p class="text-[24px] font-semibold leading-[1.2] text-[#1e1b18]">Intercontinental Cup</p>
+                  <p class="mt-[5px] text-[16px] leading-[1.3] text-[#948c82]">1999</p>
+                </div>
+              </div>
+            </li>
+            <li data-category="european">
+              <div class="flex h-[118px] items-start border-t border-[#e4dccd] pt-[22px]">
+                <span class="w-[140px] font-display text-[56px] font-extrabold leading-none text-[#1e1b18]">1</span>
+                <div class="pt-1">
+                  <p class="text-[24px] font-semibold leading-[1.2] text-[#1e1b18]">FIFA Club World Cup</p>
+                  <p class="mt-[5px] text-[16px] leading-[1.3] text-[#948c82]">2008</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <!-- ============ FOOTER (Figma: Footer) ============ -->
+    <footer class="relative overflow-hidden bg-cream">
+      <div class="relative h-[550px]">
+        <img src="assets/images/figma/footer-stadium.png" alt="" class="absolute inset-0 h-full w-full object-cover object-bottom opacity-60" />
+      </div>
+      <div class="mx-auto w-full max-w-[1152px] px-5 pb-[57px] pt-[49px] lg:px-0">
+        <div class="grid gap-10 lg:grid-cols-[496px_200px_200px_1fr] lg:gap-0">
+          <div>
+            <p class="font-display text-[56px] font-extrabold leading-[0.9] text-ink">Manchester United</p>
+            <p class="mt-[30px] max-w-[360px] text-[16px] leading-[1.5] text-muted-2">Sir Matt Busby Way, Old Trafford, Manchester M16 0RA</p>
+          </div>
+          <div>
+            <p class="text-[13px] font-semibold uppercase leading-[1.3] tracking-[1.3px] text-muted">Explore</p>
+            <nav class="mt-[19px] flex flex-col gap-[10px] text-[18px] leading-[1.3] text-ink" aria-label="Footer">
+              <a href="index.html" class="hover:text-bronze">Home</a>
+              <a href="history.html" class="hover:text-bronze">History</a>
+              <a href="business.html" class="hover:text-bronze">Business</a>
+              <a href="trophies.html" class="hover:text-bronze">Trophies</a>
+            </nav>
+          </div>
+          <div>
+            <p class="text-[13px] font-semibold uppercase leading-[1.3] tracking-[1.3px] text-muted">Club</p>
+            <ul class="mt-[19px] flex flex-col gap-[10px] text-[18px] leading-[1.3] text-ink">
+              <li>Old Trafford</li>
+              <li>Carrington</li>
+              <li>Matchday</li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-[13px] font-semibold uppercase leading-[1.3] tracking-[1.3px] text-muted">Legal</p>
+            <ul class="mt-[19px] flex flex-col gap-[10px] text-[18px] leading-[1.3] text-ink">
+              <li>Privacy</li>
+              <li>Cookies</li>
+              <li>Terms</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-[29px] h-px bg-rule"></div>
+        <div class="mt-[19px] flex items-start justify-between gap-6 text-[14px] leading-[1.3]">
+          <p class="text-muted">© 2026 Ayman Gavrie Herdian. Kira</p>
+          <p class="font-semibold text-ink">EN · ID</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

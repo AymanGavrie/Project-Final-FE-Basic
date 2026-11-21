@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Business · Manchester United</title>
+    <meta name="description" content="Revenue, the commercial engine, and the stadium that anchors it: Old Trafford and Carrington." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@700;800&display=swap"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#f4efe8",
+              ink: "#1a1714",
+              "ink-soft": "#4a443e",
+              muted: "#8a8178",
+              "muted-2": "#6e665e",
+              bronze: "#8c6a3f",
+              rule: "#d9d1c6",
+            },
+            fontFamily: {
+              display: ['"Barlow Condensed"', "sans-serif"],
+              body: ["Barlow", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="bg-cream font-body text-ink antialiased">
+    <!-- ============ NAVBAR (Figma: Navbar F) ============ -->
+    <header class="fixed inset-x-0 top-[22px] z-50 px-4">
+      <div class="nav-pill mx-auto flex h-[60px] max-w-[1040px] items-center justify-between px-3 lg:px-[21px]">
+        <a href="index.html" class="flex min-w-0 shrink-0 items-center gap-3 lg:w-[230px] lg:gap-4" aria-label="Manchester United home">
+          <img src="assets/images/figma/crest.png" alt="" class="h-[44px] w-[43px] shrink-0 object-cover" />
+          <span class="whitespace-nowrap font-display text-[13px] font-bold tracking-[0.3px] text-white sm:text-[15px]">MANCHESTER UNITED</span>
+        </a>
+
+        <nav class="hidden h-[60px] w-[480px] shrink-0 items-center lg:flex" aria-label="Main">
+          <a href="index.html" class="flex h-10 w-[120px] items-center justify-center rounded-[20px] text-[12px] font-semibold tracking-[0.72px] text-[#bbb] transition-colors hover:text-white">HOME</a>
+          <a href="history.html" class="flex h-10 w-[120px] items-center justify-center rounded-[20px] text-[12px] font-semibold tracking-[0.72px] text-[#bbb] transition-colors hover:text-white">HISTORY</a>
+          <a href="business.html" aria-current="page" class="flex h-10 w-[120px] items-center justify-center rounded-[20px] bg-cream text-[12px] font-semibold tracking-[0.72px] text-ink">BUSINESS</a>
+          <a href="trophies.html" class="flex h-10 w-[120px] items-center justify-center rounded-[20px] text-[12px] font-semibold tracking-[0.72px] text-[#bbb] transition-colors hover:text-white">TROPHIES</a>
+        </nav>
+
+        <div class="flex shrink-0 items-center justify-end gap-2 lg:w-[230px]">
+          <button type="button" class="flex h-10 w-10 items-center justify-center" aria-label="Theme">
+            <img src="assets/images/figma/theme-toggle.svg" alt="" class="h-10 w-10" />
+          </button>
+          <button
+            id="menu-toggle"
+            type="button"
+            class="flex h-10 w-10 items-center justify-center text-white lg:hidden"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Open menu"
+          >
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <nav id="mobile-menu" class="nav-pill mx-auto mt-2 hidden max-w-[1040px] flex-col p-2 lg:hidden" aria-label="Mobile">
+        <a href="index.html" class="px-4 py-3 text-[14px] font-semibold tracking-[0.72px] text-[#bbb]">HOME</a>
+        <a href="history.html" class="px-4 py-3 text-[14px] font-semibold tracking-[0.72px] text-[#bbb]">HISTORY</a>
+        <a href="business.html" aria-current="page" class="rounded-[14px] bg-cream px-4 py-3 text-[14px] font-semibold tracking-[0.72px] text-ink">BUSINESS</a>
+        <a href="trophies.html" class="px-4 py-3 text-[14px] font-semibold tracking-[0.72px] text-[#bbb]">TROPHIES</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ============ HEADING ============ -->
+      <section class="px-5 pt-[150px] text-center lg:px-0">
+        <h1 class="font-display text-[clamp(40px,7.5vw,96px)] font-bold leading-none text-ink">| Business |</h1>
+        <p class="mx-auto mt-[34px] max-w-[800px] text-[22px] leading-[1.4] text-ink-soft">
+          The commercial engine, the revenue behind it, and the stadium that anchors it.
+        </p>
+      </section>
+
+      <div class="mx-auto w-full max-w-[1152px] px-5 lg:px-0">
+        <!-- ============ REVENUE TABLE ============ -->
+        <p class="mt-[109px] text-[18px] font-semibold leading-[1.3] text-muted">Revenue, FY2026 (financial year ended 30 June 2026, rounded)</p>
+
+        <div class="mt-[27px]">
+          <div class="flex h-[130px] items-start justify-between border-t border-rule">
+            <div class="pt-6">
+              <p class="font-display text-[56px] font-bold leading-none text-ink">Commercial</p>
+              <p class="mt-1 text-[16px] leading-[1.3] text-muted">46.8% of total revenue</p>
+            </div>
+            <div class="pt-5 text-right">
+              <p class="font-display text-[72px] font-extrabold leading-[0.9] tracking-[-0.72px] text-ink">£317.3m</p>
+              <p class="mt-[11px] text-[16px] leading-[1.3] text-muted">−4.8%</p>
+            </div>
+          </div>
+
+          <div class="flex h-[130px] items-start justify-between border-t border-rule">
+            <div class="pt-6">
+              <p class="font-display text-[56px] font-bold leading-none text-ink">Broadcasting</p>
+              <p class="mt-1 text-[16px] leading-[1.3] text-muted">30.5% of total revenue</p>
+            </div>
+            <div class="pt-5 text-right">
+              <p class="font-display text-[72px] font-extrabold leading-[0.9] tracking-[-0.72px] text-ink">£206.8m</p>
+              <p class="mt-[11px] text-[16px] leading-[1.3] text-muted">+19.6%</p>
+            </div>
+          </div>
+
+          <div class="flex h-[130px] items-start justify-between border-t border-rule">
+            <div class="pt-6">
+              <p class="font-display text-[56px] font-bold leading-none text-ink">Matchday</p>
+              <p class="mt-1 text-[16px] leading-[1.3] text-muted">22.7% of total revenue</p>
+            </div>
+            <div class="pt-5 text-right">
+              <p class="font-display text-[72px] font-extrabold leading-[0.9] tracking-[-0.72px] text-ink">£153.5m</p>
+              <p class="mt-[11px] text-[16px] leading-[1.3] text-muted">−4.2%</p>
+            </div>
+          </div>
+
+          <div class="flex h-[130px] items-start justify-between border-t border-rule">
+            <div class="pt-6">
+              <p class="font-display text-[56px] font-bold leading-none text-ink">Total revenue</p>
+              <p class="mt-1 text-[16px] leading-[1.3] text-muted">100% of total revenue</p>
+            </div>
+            <div class="pt-5 text-right">
+              <p class="font-display text-[72px] font-extrabold leading-[0.9] tracking-[-0.72px] text-bronze">£677.6m</p>
+              <p class="mt-[11px] text-[16px] leading-[1.3] text-muted">+1.7%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ OLD TRAFFORD (full-bleed photo with veil) ============ -->
+      <section class="relative mt-[50px] h-[560px] overflow-hidden">
+        <img src="assets/images/figma/stadium-interior.png" alt="The stands of Old Trafford, with the pitch below." class="absolute left-0 top-0 h-[552px] w-full object-cover" />
+        <div class="absolute inset-0 bg-[rgba(26,23,20,0.4)]"></div>
+        <h2 class="absolute inset-x-0 top-[250px] text-center font-display text-[clamp(48px,5.6vw,72px)] font-bold leading-none text-white">| Old Trafford |</h2>
+        <p class="absolute inset-x-0 top-[345px] text-center text-[18px] leading-[1.3] text-white">Home since 1910 · Capacity 74,310</p>
+      </section>
+
+      <div class="mx-auto w-full max-w-[1152px] px-5 lg:px-0">
+        <!-- ============ SHARE OF REVENUE ============ -->
+        <div class="mt-[68px] flex flex-wrap justify-between gap-x-8 gap-y-8">
+          <div>
+            <p class="h-[37px] text-[18px] font-semibold leading-[1.3] text-muted">Commercial</p>
+            <p class="font-display text-[64px] font-extrabold leading-[0.9] tracking-[-0.64px] text-ink">46.8%</p>
+          </div>
+          <div>
+            <p class="h-[37px] text-[18px] font-semibold leading-[1.3] text-muted">Broadcasting</p>
+            <p class="font-display text-[64px] font-extrabold leading-[0.9] tracking-[-0.64px] text-ink">30.5%</p>
+          </div>
+          <div>
+            <p class="h-[37px] text-[18px] font-semibold leading-[1.3] text-muted">Matchday</p>
+            <p class="font-display text-[64px] font-extrabold leading-[0.9] tracking-[-0.64px] text-ink">22.7%</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ CARRINGTON (full-bleed photo with veil) ============ -->
+      <section class="relative mt-[143px] h-[420px] overflow-hidden">
+        <img src="assets/images/figma/carrington.png" alt="Aerial view of the Carrington training ground." class="absolute left-0 top-0 h-[672px] w-full object-cover" />
+        <div class="absolute inset-x-0 bottom-0 top-[4px] bg-[rgba(26,23,20,0.4)]"></div>
+        <h2 class="absolute inset-x-0 top-[188px] text-center font-display text-[56px] font-bold leading-none text-white">| Carrington |</h2>
+        <p class="absolute left-1/2 top-[259px] w-[640px] max-w-[calc(100%-40px)] -translate-x-1/2 text-center text-[20px] leading-[1.5] text-white">
+          The heart of the club's performance development and future generations.
+        </p>
+      </section>
+
+      <div class="mx-auto w-full max-w-[1152px] px-5 pb-[89px] lg:px-0">
+        <ul class="mt-[49px] flex flex-col gap-[17px] whitespace-pre text-[18px] font-semibold leading-[23px] text-ink">
+          <li>→  World-class performance centre</li>
+          <li>→  Academy and youth pathway</li>
+          <li>→  Investment in the future</li>
+        </ul>
+      </div>
+    </main>
+
+    <!-- ============ FOOTER (Figma: Footer) ============ -->
+    <footer class="relative overflow-hidden bg-cream">
+      <div class="relative h-[550px]">
+        <img src="assets/images/figma/footer-stadium.png" alt="" class="absolute inset-0 h-full w-full object-cover object-bottom opacity-60" />
+      </div>
+      <div class="mx-auto w-full max-w-[1152px] px-5 pb-[57px] pt-[49px] lg:px-0">
+        <div class="grid gap-10 lg:grid-cols-[496px_200px_200px_1fr] lg:gap-0">
+          <div>
+            <p class="font-display text-[56px] font-extrabold leading-[0.9] text-ink">Manchester United</p>
+            <p class="mt-[30px] max-w-[360px] text-[16px] leading-[1.5] text-muted-2">Sir Matt Busby Way, Old Trafford, Manchester M16 0RA</p>
+          </div>
+          <div>
+            <p class="text-[13px] font-semibold uppercase leading-[1.3] tracking-[1.3px] text-muted">Explore</p>
+            <nav class="mt-[19px] flex flex-col gap-[10px] text-[18px] leading-[1.3] text-ink" aria-label="Footer">
+              <a href="index.html" class="hover:text-bronze">Home</a>
+              <a href="history.html" class="hover:text-bronze">History</a>
+              <a href="business.html" class="hover:text-bronze">Business</a>
+              <a href="trophies.html" class="hover:text-bronze">Trophies</a>
+            </nav>
+          </div>
+          <div>
+            <p class="text-[13px] font-semibold uppercase leading-[1.3] tracking-[1.3px] text-muted">Club</p>
+            <ul class="mt-[19px] flex flex-col gap-[10px] text-[18px] leading-[1.3] text-ink">
+              <li>Old Trafford</li>
+              <li>Carrington</li>
+              <li>Matchday</li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-[13px] font-semibold uppercase leading-[1.3] tracking-[1.3px] text-muted">Legal</p>
+            <ul class="mt-[19px] flex flex-col gap-[10px] text-[18px] leading-[1.3] text-ink">
+              <li>Privacy</li>
+              <li>Cookies</li>
+              <li>Terms</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-[29px] h-px bg-rule"></div>
+        <div class="mt-[19px] flex items-start justify-between gap-6 text-[14px] leading-[1.3]">
+          <p class="text-muted">© 2026 Ayman Gavrie Herdian. Kira</p>
+          <p class="font-semibold text-ink">EN · ID</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manchester United · The Red Devils</title>
+    <meta name="description" content="A fan-made tribute to Manchester United: the club's history, business and trophy cabinet." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@700;800&display=swap"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#f4efe8",
+              ink: "#1a1714",
+              "ink-soft": "#4a443e",
+              muted: "#8a8178",
+              "muted-2": "#6e665e",
+              bronze: "#8c6a3f",
+              rule: "#d9d1c6",
+            },
+            fontFamily: {
+              display: ['"Barlow Condensed"', "sans-serif"],
+              body: ["Barlow", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="bg-cream font-body text-ink antialiased">
+    <!-- ============ NAVBAR (Figma: Navbar F) ============ -->
+    <header class="fixed inset-x-0 top-[22px] z-50 px-4">
+      <div class="nav-pill mx-auto flex h-[60px] max-w-[1040px] items-center justify-between px-3 lg:px-[21px]">
+        <a href="index.html" class="flex min-w-0 shrink-0 items-center gap-3 lg:w-[230px] lg:gap-4" aria-label="Manchester United home">
+          <img src="assets/images/figma/crest.png" alt="" class="h-[44px] w-[43px] shrink-0 object-cover" />
+          <span class="whitespace-nowrap font-display text-[13px] font-bold tracking-[0.3px] text-white sm:text-[15px]">MANCHESTER UNITED</span>
+        </a>
+
+        <nav class="hidden h-[60px] w-[480px] shrink-0 items-center lg:flex" aria-label="Main">
+          <a href="index.html" aria-current="page" class="flex h-10 w-[120px] items-center justify-center rounded-[20px] bg-cream text-[12px] font-semibold tracking-[0.72px] text-ink">HOME</a>
+          <a href="history.html" class="flex h-10 w-[120px] items-center justify-center rounded-[20px] text-[12px] font-semibold tracking-[0.72px] text-[#bbb] transition-colors hover:text-white">HISTORY</a>
+          <a href="business.html" class="flex h-10 w-[120px] items-center justify-center rounded-[20px] text-[12px] font-semibold tracking-[0.72px] text-[#bbb] transition-colors hover:text-white">BUSINESS</a>
+          <a href="trophies.html" class="flex h-10 w-[120px] items-center justify-center rounded-[20px] text-[12px] font-semibold tracking-[0.72px] text-[#bbb] transition-colors hover:text-white">TROPHIES</a>
+        </nav>
+
+        <div class="flex shrink-0 items-center justify-end gap-2 lg:w-[230px]">
+          <button type="button" class="flex h-10 w-10 items-center justify-center" aria-label="Theme">
+            <img src="assets/images/figma/theme-toggle.svg" alt="" class="h-10 w-10" />
+          </button>
+          <button
+            id="menu-toggle"
+            type="button"
+            class="flex h-10 w-10 items-center justify-center text-white lg:hidden"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Open menu"
+          >
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <nav id="mobile-menu" class="nav-pill mx-auto mt-2 hidden max-w-[1040px] flex-col p-2 lg:hidden" aria-label="Mobile">
+        <a href="index.html" aria-current="page" class="px-4 py-3 text-[14px] font-semibold tracking-[0.72px] text-ink bg-cream rounded-[14px]">HOME</a>
+        <a href="history.html" class="px-4 py-3 text-[14px] font-semibold tracking-[0.72px] text-[#bbb]">HISTORY</a>
+        <a href="business.html" class="px-4 py-3 text-[14px] font-semibold tracking-[0.72px] text-[#bbb]">BUSINESS</a>
+        <a href="trophies.html" class="px-4 py-3 text-[14px] font-semibold tracking-[0.72px] text-[#bbb]">TROPHIES</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ============ HERO (pinned while scrolling: photo zooms out, title rises) ============ -->
+      <div id="hero-wrap" class="relative h-[200vh]">
+        <section class="sticky top-0 flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-white px-5 pb-[10vh] text-center">
+          <img
+            id="hero-img"
+            src="assets/images/figma/hero-home.jpg"
+            alt=""
+            class="absolute inset-0 h-full w-full origin-center object-cover"
+          />
+          <div class="absolute inset-0 bg-[rgba(26,23,20,0.35)]"></div>
+
+          <div id="hero-content" class="relative z-10 flex flex-col items-center">
+            <h1 class="font-display text-[clamp(40px,7.5vw,96px)] font-bold uppercase leading-none text-white">
+              THEATRE OF DREAMS
+            </h1>
+            <p class="mt-[44px] max-w-[800px] text-[clamp(18px,1.9vw,24px)] leading-[1.35] text-white">
+              Welcome to the Red Devils' home since 1910
+            </p>
+          </div>
+
+          <div id="hero-cue" class="absolute inset-x-0 bottom-8 z-10 text-center">
+            <p class="text-[9px] uppercase leading-[1.5] tracking-[1.26px] text-white">Scroll to explore</p>
+            <img src="assets/images/figma/scroll-icon.svg" alt="" class="mx-auto mt-[6px] h-[18px] w-[18px]" />
+          </div>
+        </section>
+      </div>
+
+      <div class="mx-auto w-full max-w-[1152px] px-5 lg:px-0">
+        <!-- ============ INTRO ============ -->
+        <p class="mx-auto max-w-[800px] pb-[130px] pt-20 text-center text-[32px] font-semibold leading-[1.4] text-ink">
+          A club born from a railway workers' team in 1878, now one of football's most recognised names.
+        </p>
+
+        <!-- ============ FEATURE: HISTORY (image left) ============ -->
+        <section class="grid gap-12 lg:grid-cols-[640px_448px] lg:items-start lg:gap-16">
+          <img
+            src="assets/images/figma/team-1958.png"
+            alt="Manchester United players in striped green and yellow kit, posed in a team photograph."
+            class="h-[520px] w-full object-cover lg:w-[640px]"
+          />
+          <div class="lg:pt-20">
+            <h2 class="font-display text-[56px] font-bold leading-none text-ink">| History |</h2>
+            <p class="mt-5 text-[20px] leading-[1.5] text-ink-soft">
+              From a railway workers' team to one of football's biggest names, shaped by recovery and ambition.
+            </p>
+            <a href="history.html" class="mt-7 inline-block text-[18px] font-semibold leading-[1.3] text-bronze">Read the history →</a>
+          </div>
+        </section>
+
+        <!-- ============ FEATURE: BUSINESS (image right) ============ -->
+        <section class="mt-20 grid gap-12 lg:grid-cols-[448px_640px] lg:items-start lg:gap-16">
+          <div class="lg:pt-20">
+            <h2 class="font-display text-[56px] font-bold leading-none text-ink">| Business |</h2>
+            <p class="mt-5 text-[20px] leading-[1.5] text-ink-soft">
+              Revenue, the global commercial engine, and the stadium that anchors it.
+            </p>
+            <a href="business.html" class="mt-7 inline-block text-[18px] font-semibold leading-[1.3] text-bronze">See the business →</a>
+          </div>
+          <img
+            src="assets/images/figma/stadium-interior.png"
+            alt="The stands of Old Trafford filled with red seats, viewed from the upper tier."
+            class="h-[520px] w-full object-cover lg:w-[640px]"
+          />
+        </section>
+
+        <!-- ============ FEATURE: TROPHIES (image left, text offset) ============ -->
+        <section class="mt-[83px] lg:grid lg:grid-cols-[684px_1fr] lg:items-start">
+          <img
+            src="assets/images/figma/trophy-cabinet.png"
+            alt="A glass trophy cabinet with silverware on display."
+            class="aspect-[4/3] w-full object-cover lg:-ml-[26px] lg:w-[684px]"
+          />
+          <div class="mt-12 lg:mt-0 lg:pl-5 lg:pt-[77px]">
+            <h2 class="font-display text-[56px] font-bold leading-none text-ink">| Trophies |</h2>
+            <p class="mt-5 text-[20px] leading-[1.5] text-ink-soft">
+              Seventy trophies across eleven competitions, from the first league title to the club's European nights.
+            </p>
+            <a href="trophies.html" class="mt-7 inline-block text-[18px] font-semibold leading-[1.3] text-bronze">View the trophies →</a>
+          </div>
+        </section>
+
+        <!-- ============ MATCHES ============ -->
+        <section class="mt-[104px] pb-[108px]">
+          <div class="flex items-start justify-between">
+            <h2 class="font-display text-[56px] font-bold leading-none text-ink">| Matches |</h2>
+            <a href="#" class="mt-[30px] text-[18px] font-semibold leading-[1.3] text-bronze">All fixtures →</a>
+          </div>
+
+          <div class="mt-9 grid gap-12 md:grid-cols-3">
+            <article class="flex flex-col gap-2">
+              <h3 class="text-[22px] font-semibold leading-[26px] text-ink">Man Utd v Aston Villa</h3>
+              <p class="text-[16px] leading-[21px] text-muted">Premier League</p>
+              <p class="text-[16px] leading-[21px] text-muted">8 Nov · Result 4 — 4</p>
+            </article>
+            <article class="flex flex-col gap-2">
+              <h3 class="text-[22px] font-semibold leading-[26px] text-ink">Liverpool v Man Utd</h3>
+              <p class="text-[16px] leading-[21px] text-muted">Premier League</p>
+              <p class="text-[16px] leading-[21px] text-muted">22 Nov · 19:30 · Anfield</p>
+            </article>
+            <article class="flex flex-col gap-2">
+              <h3 class="text-[22px] font-semibold leading-[26px] text-ink">Sporting v Man Utd</h3>
+              <p class="text-[16px] leading-[21px] text-muted">Champions League</p>
+              <p class="text-[16px] leading-[21px] text-muted">25 Nov · 20:00</p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ============ FOOTER (Figma: Footer) ============ -->
+    <footer class="relative overflow-hidden bg-cream">
+      <div class="relative h-[550px]">
+        <img src="assets/images/figma/footer-stadium.png" alt="" class="absolute inset-0 h-full w-full object-cover object-bottom opacity-60" />
+      </div>
+      <div class="mx-auto w-full max-w-[1152px] px-5 pb-[57px] pt-[49px] lg:px-0">
+        <div class="grid gap-10 lg:grid-cols-[496px_200px_200px_1fr] lg:gap-0">
+          <div>
+            <p class="font-display text-[56px] font-extrabold leading-[0.9] text-ink">Manchester United</p>
+            <p class="mt-[30px] max-w-[360px] text-[16px] leading-[1.5] text-muted-2">Sir Matt Busby Way, Old Trafford, Manchester M16 0RA</p>
+          </div>
+          <div>
+            <p class="text-[13px] font-semibold uppercase leading-[1.3] tracking-[1.3px] text-muted">Explore</p>
+            <nav class="mt-[19px] flex flex-col gap-[10px] text-[18px] leading-[1.3] text-ink" aria-label="Footer">
+              <a href="index.html" class="hover:text-bronze">Home</a>
+              <a href="history.html" class="hover:text-bronze">History</a>
+              <a href="business.html" class="hover:text-bronze">Business</a>
+              <a href="trophies.html" class="hover:text-bronze">Trophies</a>
+            </nav>
+          </div>
+          <div>
+            <p class="text-[13px] font-semibold uppercase leading-[1.3] tracking-[1.3px] text-muted">Club</p>
+            <ul class="mt-[19px] flex flex-col gap-[10px] text-[18px] leading-[1.3] text-ink">
+              <li>Old Trafford</li>
+              <li>Carrington</li>
+              <li>Matchday</li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-[13px] font-semibold uppercase leading-[1.3] tracking-[1.3px] text-muted">Legal</p>
+            <ul class="mt-[19px] flex flex-col gap-[10px] text-[18px] leading-[1.3] text-ink">
+              <li>Privacy</li>
+              <li>Cookies</li>
+              <li>Terms</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-[29px] h-px bg-rule"></div>
+        <div class="mt-[19px] flex items-start justify-between gap-6 text-[14px] leading-[1.3]">
+          <p class="text-muted">© 2026 Ayman Gavrie Herdian. Kira</p>
+          <p class="font-semibold text-ink">EN · ID</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
